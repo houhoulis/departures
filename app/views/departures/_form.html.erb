@@ -1,0 +1,57 @@
+<%= form_with(model: departure, local: true) do |form| %>
+  <% if departure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(departure.errors.count, "error") %> prohibited this departure from being saved:</h2>
+
+      <ul>
+      <% departure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :time_stamp %>
+    <%= form.datetime_select :time_stamp, id: :departure_time_stamp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :origin %>
+    <%= form.text_field :origin, id: :departure_origin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trip %>
+    <%= form.text_field :trip, id: :departure_trip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :destination %>
+    <%= form.text_field :destination, id: :departure_destination %>
+  </div>
+
+  <div class="field">
+    <%= form.label :scheduled_time %>
+    <%= form.datetime_select :scheduled_time, id: :departure_scheduled_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lateness %>
+    <%= form.number_field :lateness, id: :departure_lateness %>
+  </div>
+
+  <div class="field">
+    <%= form.label :track %>
+    <%= form.text_field :track, id: :departure_track %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :departure_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
