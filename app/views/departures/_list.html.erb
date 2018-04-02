@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th>Time Stamp</th>
+    <th>Origin</th>
+    <th>Trip</th>
+    <th>Destination</th>
+    <th>Scheduled Time</th>
+    <th>Lateness</th>
+    <th>Track</th>
+    <th>Status</th>
+  </tr>
+
+  <% @departures.each do |dep| %>
+    <tr>
+      <td><%= dep.time_stamp %></td>
+      <td><%= dep.origin %></td>
+      <td><%= dep.trip %></td>
+      <td><%= dep.destination %></td>
+      <td><%= dep.scheduled_time %></td>
+      <td><%= dep.lateness %></td>
+      <td><%= dep.track %></td>
+      <td><%= dep.status %></td>
+    </tr>
+  <% end %>
+</table>

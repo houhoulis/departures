@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @board.location %>
-</p>
+<h1><%= @board.location %></h1>
 
-<%= link_to 'Edit', edit_board_path(@board) %> |
-<%= link_to 'Back', boards_path %>
+<%= render partial: 'departures/list' %>
