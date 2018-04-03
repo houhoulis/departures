@@ -1,4 +1,5 @@
 require 'csv'
+require 'net/http'
 
 class DepartureFetcher
   attr_reader :data
