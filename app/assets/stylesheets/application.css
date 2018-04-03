@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+h1, h2 {
+  padding: 10px 20px;
+}
+th, td {
+  border-bottom: 1px dotted black;
+  border-right: 1px dotted black;
+}
