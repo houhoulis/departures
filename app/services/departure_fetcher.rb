@@ -3,12 +3,12 @@ require 'net/http'
 
 class DepartureFetcher
   attr_reader :data
-  @last_called = Time.zone.now
+  @last_called
 
   URL = URI("http://developer.mbta.com/lib/gtrtfs/Departures.csv")
 
   def self.call
-    return if Time.zone.now < @last_called + 1.minute
+    return if @last_called.present? && Time.zone.now < @last_called + 1.minute
     @last_called = Time.zone.now
 
     new.call
